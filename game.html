@@ -94,14 +94,14 @@ else {
 	<!--fonction @set my position, je suis rendu la page display current position-->
 	function set_my_position(position){
 	var pos = new google.maps.LatLng(latitude, longitude);
-		var latitude = position.coords.longitude;
-		var longitude = position.coords.latitude;
-		var emoji = player.png;
+		var latitude = position.coords.latitude;
+		var longitude = position.coords.longitude;
+		var emojiplayer = player.png;
 		var marker_position = new google.maps.LatLng(latitude, longitude);
 	var marker = new google.maps.Marker({
 		position: pos,
 		map: zombie_map,
-		icon: emoji
+		icon: emojiplayer
 	
 		});
 	}
