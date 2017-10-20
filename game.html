@@ -94,10 +94,11 @@ else {
 		function set_my_position(position){
 
 		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-		var marker = new google.maps.Marker({
+		var emoji= player.png
+			var marker = new google.maps.Marker({
 		position: pos,
 		map: zombie_map,
-		icon: player.png
+		icon: emoji
 		});
 
 		}	
