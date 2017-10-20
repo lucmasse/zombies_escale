@@ -89,7 +89,9 @@ var markers = data.split("\n");
 else {
     alert("La géolocalisation ne fonctionne pas dans votre navigateur");
 }
-function set_my_position(position){
+
+    }
+	function set_my_position(position){
 
 		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		var marker = new google.maps.Marker({
@@ -98,9 +100,7 @@ function set_my_position(position){
 		icon: player.png
 		});
 
-		}
-    }
-			
+		}		
 </script>
 
 
