@@ -91,13 +91,13 @@ else {
 }
 		
     }
-	function set_my_position(pos){
+	function set_my_position(position){
 		document.write(marker);
-		var latitude = pos.coords.latitude;
-		var longitude = pos.coords.longitude;
-		var pos = new google.maps.LatLng(latitude, longitude);
+		var latitude = position.coords.latitude;
+		var longitude = position.coords.longitude;
+		var player_position = new google.maps.LatLng(latitude, longitude);
 		var marker = new google.maps.Marker({
-		position: pos,
+		position: player_position,
 		map: zombie_map,
 		icon: player.png
 		});
