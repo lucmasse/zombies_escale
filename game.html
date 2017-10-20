@@ -92,7 +92,7 @@ else {
 		
     }
 	function set_my_position(position){
-		document.write(marker);
+		
 		var latitude = position.coords.latitude;
 		var longitude = position.coords.longitude;
 		var emoji = player.png;
@@ -102,6 +102,7 @@ else {
 		map: zombie_map,
 		icon: emoji
 		});
+		document.write(marker);
 }
 </script>
 
