@@ -59,16 +59,7 @@ Attaque de zombies à l'Escale!!!
 45.77372883065637 -71.93036824464798 zombie.png`;
 var markers = data.split("\n");
     function initMap() {
-function set_my_position(position){
 
-		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-		var marker = new google.maps.Marker({
-		position: pos,
-		map: zombie_map,
-		icon: player.png
-		});
-
-		}
             zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
             zoom: 19,
             center: {lat: 45.773345, lng: -71.929264}
@@ -98,7 +89,16 @@ function set_my_position(position){
 else {
     alert("La géolocalisation ne fonctionne pas dans votre navigateur");
 }
+function set_my_position(position){
 
+		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		var marker = new google.maps.Marker({
+		position: pos,
+		map: zombie_map,
+		icon: player.png
+		});
+
+		}
     }
 			
 </script>
