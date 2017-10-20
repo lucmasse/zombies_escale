@@ -91,16 +91,14 @@ else {
 }
 		
     }
-	function set_my_position(position){
-		
+	function set_my_position(pos){
 		var latitude = position.coords.latitude;
 		var longitude = position.coords.longitude;
-		var emoji = player.png;
 		var pos = new google.maps.LatLng(latitude, longitude);
 		var marker = new google.maps.Marker({
 		position: pos,
 		map: zombie_map,
-		icon: emoji
+		icon: player.png
 		});
 }
 </script>
