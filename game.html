@@ -84,7 +84,7 @@ var markers = data.split("\n");
 		
 		<!--geolocalisation-->
 		if(navigator.geolocation) {
-    navigator.geolocation.watchPosition(set_my_position);
+    navigator.geolocation.getCurrentPosition(set_my_position);
 }
 else {
     alert("La géolocalisation ne fonctionne pas dans votre navigateur");
