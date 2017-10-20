@@ -87,21 +87,25 @@ var markers = data.split("\n");
     navigator.geolocation.watchPosition(set_my_position);
 }
 else {
-    alert("La géolocalisation ne semble pas activée ou ne fonctionne pas dans votre navigateur");
+    alert("La géolocalisation ne fonctionne pas dans votre navigateur");
 }
 		
     }
 	<!--fonction @set my position, je suis rendu la page display current position-->
 	function set_my_position(position){
-	var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	var player_icon = player.png
-	var player = new google.maps.Marker({
+	var pos = new google.maps.LatLng(latitude, longitude);
+		var latitude = position.coords.longitude;
+		var longitude = position.coords.latitude;
+		var emoji = player.png;
+		var marker_position = new google.maps.LatLng(latitude, longitude);
+	var marker = new google.maps.Marker({
 		position: pos,
 		map: zombie_map,
-		icon: player_icon
+		icon: emoji
 	
 		});
 	}
+
 </script>
 
 
