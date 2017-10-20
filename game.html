@@ -10,7 +10,7 @@
     background-color: grey;
 }
 </style>
-    <title>My page title</title>
+    <title>Zombies à l'Escale!!!</title>
   </head>
   <body>
 Attaque de zombies à l'Escale!!!
@@ -89,21 +89,18 @@ var markers = data.split("\n");
 else {
     alert("La géolocalisation ne fonctionne pas dans votre navigateur");
 }
-		
-    }
-	function set_my_position(position){
+		function set_my_position(position){
 
-		
-		var latitude = position.coords.latitude;
-		var longitude = position.coords.longitude;
-		var player_position = new google.maps.LatLng(latitude, longitude);
-		var hunter = new google.maps.Marker({
-		position: player_position,
+		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		var marker = new google.maps.Marker({
+		position: pos,
 		map: zombie_map,
 		icon: player.png
 		});
 
-}
+		}	
+    }
+
 </script>
 
 
