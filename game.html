@@ -92,12 +92,12 @@ else {
 
     }
 	function set_my_position(position){
-
+		var emoji= "player.png";
 		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		var marker = new google.maps.Marker({
 		position: pos,
 		map: zombie_map,
-		icon: "player.png"
+		icon: emoji
 		});
 
 		}		
