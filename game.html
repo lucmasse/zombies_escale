@@ -88,13 +88,13 @@ else {
     alert("La géolocalisation ne fonctionne pas dans votre navigateur");
 }
 		var old_position = new google.maps.Marker({
-		position: {lat: 45.773345, lng: -71.929264},
+		position: ({lat: 45.773345, lng: -71.929264}),
 		map: zombie_map,
 		icon: "player.png"
 		});
     }
 	function set_my_position(position){
-		old_position = old_position.setMap(null);
+		old_position.setMap(null);
 		var emoji = "player.png";
 		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		var marker = new google.maps.Marker({
