@@ -10,15 +10,14 @@
     background-color: grey;
 }
 </style>
-    <title>My page title</title>
+    <title>Zombies à l'Escale!!!</title>
   </head>
   <body>
 Attaque de zombies à l'Escale!!!
 <div id="zombie_map">
 <script>
     var zombie_map;
-	<!--essai pour marqueur-->
-	var old_position;
+	var old_position = {lat: 45.773345, lng: -71.929264};
 	var all_markers = [];
 	var data = `45.77309274686413 -71.92931145429611 zombie.png 
 
@@ -59,7 +58,6 @@ Attaque de zombies à l'Escale!!!
 45.77372883065637 -71.93036824464798 zombie.png`;
 var markers = data.split("\n");
     function initMap() {
-
             zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
             zoom: 19,
             center: {lat: 45.773345, lng: -71.929264}
@@ -89,33 +87,19 @@ var markers = data.split("\n");
 else {
     alert("La géolocalisation ne fonctionne pas dans votre navigateur");
 }
-		
+
     }
-	<!--fonction @set my position, je suis rendu la page display current position-->
 	function set_my_position(position){
-	var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-	var marker = new google.maps.Marker({
-		position: pos,
-		map: zombie_map,
-		icon: player.png
-
-	
-		});
-	}
-	<!--deuxieme version du code de localisation-->
-	function set_my_position(position){
-		document.write(marker);
-		var latitude = position.coords.latitude;
-		var longitude = position.coords.longitude;
-		var emoji = player.png;
-		var pos = new google.maps.LatLng(latitude, longitude);
+		old_position.setMap(null);
+		var emoji = "player.png";
+		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		var marker = new google.maps.Marker({
 		position: pos,
 		map: zombie_map,
 		icon: emoji
 		});
-}
+		old_position = marker; 
+		}		
 </script>
 
 
