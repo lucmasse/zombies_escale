@@ -17,7 +17,7 @@ Attaque de zombies à l'Escale!!!
 <div id="zombie_map">
 <script>
     var zombie_map;
-	var old_position;
+	var old_position = {lat: 45.773345, lng: -71.929264};
 	var all_markers = [];
 	var data = `45.77309274686413 -71.92931145429611 zombie.png 
 
@@ -58,7 +58,6 @@ Attaque de zombies à l'Escale!!!
 45.77372883065637 -71.93036824464798 zombie.png`;
 var markers = data.split("\n");
     function initMap() {
-			old_position = new google.maps.Marker(center);
             zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
             zoom: 19,
             center: {lat: 45.773345, lng: -71.929264}
