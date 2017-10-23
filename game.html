@@ -1,4 +1,5 @@
 <html>
+<!-- à ce stade, j'ai le curseur pour le personnage mais il ne s'actualise pas-->
   <head>
   <style>
 #zombie_map {
@@ -17,6 +18,7 @@ Attaque de zombies à l'Escale!!!
 <div id="zombie_map">
 <script>
     var zombie_map;
+	var old_position;
 	var all_markers = [];
 	var data = `45.77309274686413 -71.92931145429611 zombie.png 
 
@@ -60,7 +62,6 @@ var markers = data.split("\n");
             zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
             zoom: 19,
             center: {lat: 45.773345, lng: -71.929264}
-			
         });
 		<!--code pour indiquer les icones sur la carte avec les coordonnees-->
 		for(var i=0; i < markers.length; i++){
@@ -86,9 +87,14 @@ var markers = data.split("\n");
 else {
     alert("La géolocalisation ne fonctionne pas dans votre navigateur");
 }
-
+		var old_position = new google.maps.Marker({
+		position: {lat: 45.773345, lng: -71.929264},
+		map: zombie_map,
+		icon: "player.png"
+		});
     }
 	function set_my_position(position){
+		old_position.setMap(null);
 		var emoji = "player.png";
 		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		var marker = new google.maps.Marker({
@@ -96,6 +102,7 @@ else {
 		map: zombie_map,
 		icon: emoji
 		});
+		old_position = marker;
 		}		
 </script>
 
