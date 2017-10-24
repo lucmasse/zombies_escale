@@ -67,7 +67,9 @@ var markers = data.split("\n");
         });
 		<!--code pour indiquer les icones sur la carte avec les coordonnees-->
 		for(var i=0; i < markers.length; i++){
-		document.write(markers[i] + "<br>");
+		<!-- tentative pour régler le problème-->
+			document.open();
+			document.write(markers[i] + "<br>");
 		var marker_data = markers[i].trim();
 		marker_data = marker_data.split(" ");
 		var latitude = marker_data[0];
