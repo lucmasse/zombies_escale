@@ -105,7 +105,8 @@ else {
 		old_position = marker;
 		for(var i=0; i < all_markers.length; i++){
 			document.write(all_markers[i] + "<br>");
-			var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, all_markers[i].getPosition());
+			<!--ajouté latitude longitude entre parentheses-->
+			var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, all_markers[i].getPosition(latitude, longitude));
 				if( distance < tolerance ){
 				var what_is_it = all_markers[i].getIcon();
 				what_is_it = what_is_it.replace(".png", "");
