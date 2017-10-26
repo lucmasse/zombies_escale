@@ -18,6 +18,7 @@ Attaque de zombies à l'Escale!!!
 <div id="zombie_map">
 <script>
     var zombie_map;
+	var tolerance = 2;
 	var old_position;
 	var all_markers = [];
 	var data = `45.77309274686413 -71.92931145429611 zombie.png 
@@ -62,6 +63,7 @@ var markers = data.split("\n");
             zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
             zoom: 19,
             center: {lat: 45.773345, lng: -71.929264}
+			
         });
 		<!--code pour indiquer les icones sur la carte avec les coordonnees-->
 		for(var i=0; i < markers.length; i++){
@@ -95,7 +97,6 @@ else {
     }
 	function set_my_position(position){
 		old_position.setMap(null);
-		<!--var emoji = "player.png";-->
 		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		var marker = new google.maps.Marker({
 		position: pos,
@@ -104,22 +105,15 @@ else {
 		});
 		old_position = marker;
 		for(var i=0; i < all_markers.length; i++){
-			document.write(all_markers[i] + "<br>");
-			<!--ajouté latitude longitude entre parentheses-->
-			var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, all_markers[i].getPosition(latitude, longitude));
-				if( distance < tolerance ){
-				var what_is_it = all_markers[i].getIcon();
-				what_is_it = what_is_it.replace(".png", "");
-				alert("Trouvé : " + what_is_it);
-				all_markers[i].setMap(null);
-				if(what_is_it != "zombie"){
-				score += 10;
-				alert("Votre score est " + score);
-				}
-				
-				}
-
+		//document.write(all_markers[i] + "<br>");
+		var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, all_markers[i].getPosition());
+		if( distance < tolerance ){
+			var what_is_it = all_markers[i].getIcon();
+			what_is_it = what_is_it.replace(".png", "");
+			alert("Trouvé : " + what_is_it);
+			all_markers[i].setMap(null);
 			}
+		}
 		}		
 </script>
 
@@ -128,7 +122,7 @@ else {
   
   
   	  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxn52Sq3xclYxzBUpnx-0u70A8Dr0lD5s&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxn52Sq3xclYxzBUpnx-0u70A8Dr0lD5s&callback=initMap&libraries=geometry">
   </script>
   
   </body>
