@@ -118,16 +118,12 @@ else {
 			<!--tentative de score dans fenetre-->
 						if( what_is_it !="zombie"){
 				score += 10;
-				alert("Votre score est " + score);
 			}
 			var myWindow = window.open("", "MsgWindow", "width=200,height=100,text-align-center");
-			myWindow.document.write("Vous avez trouvé : " + what_is_it);
+			myWindow.document.write("Vous avez trouvé : " + what_is_it <br> "Votre score : " + score);
 			all_markers[i].setMap(null);
 			
-			if( what_is_it !="zombie"){
-				score += 10;
-				alert("Votre score est " + score);
-			}
+
 			
 			
 }
