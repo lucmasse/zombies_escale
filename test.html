@@ -19,6 +19,7 @@ Attaque de zombies à l'Escale!!!
 <script>
     var zombie_map;
 	var tolerance = 2;
+	var score;
 	var old_position;
 	var all_markers = [];
 	var data = `45.77309274686413 -71.92931145429611 zombie.png 
@@ -117,6 +118,13 @@ else {
 			var myWindow = window.open("", "MsgWindow", "width=200,height=100");
 			myWindow.document.write("Vous avez trouvé : " + what_is_it);
 			all_markers[i].setMap(null);
+			
+			if( what_is_it !="zombie"){
+				score += 10;
+				alert("Votre score est " + score);
+			}
+			
+			
 }
 
 		}
