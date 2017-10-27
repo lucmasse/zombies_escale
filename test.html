@@ -11,6 +11,20 @@
     top: 0;  
     background-color: grey;
 }
+	  <!--floating score-->
+	  #floating_panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
 </style>
     <title>Zombies à l'Escale!!!</title>
   </head>
@@ -137,10 +151,14 @@ else {
 		}		
 </script>
 
-
+<!--tentative panneau score-->
 </div>
-  
-  
+<div id="floating_panel">
+	function display_score(score) {
+	var score;
+	document.write("Score = " + score)
+	}
+  <!--fin panneau score-->
   	  <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxn52Sq3xclYxzBUpnx-0u70A8Dr0lD5s&callback=initMap&libraries=geometry">
   </script>
