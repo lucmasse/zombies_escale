@@ -119,8 +119,13 @@ else {
 			all_markers[i].setMap(null);
 			
 			if( what_is_it !="zombie"){
-				score += 10;
-				alert("Votre score est " + score);
+				<!--tentative popup window-->
+				function score() {
+    var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+    myWindow.document.write("Votre score est " + score);
+}
+				//score += 10;
+				//alert("Votre score est " + score);
 			}
 			
 			
