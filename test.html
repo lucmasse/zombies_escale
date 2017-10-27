@@ -1,5 +1,6 @@
 <html>
 <!-- à ce stade, j'ai le curseur pour le personnage et il s'actualise mais je n'ai pas le score-->
+	<!--attention d'ajuster la tolérance après les tests-->
   <head>
   <style>
 #zombie_map {
@@ -121,7 +122,7 @@ else {
 			if( what_is_it !="zombie"){
 				<!--tentative popup window-->
 				score += 10;
-				function score_alert(score) {
+				function score_alert() {
     var myWindow = window.open("", "MsgWindow", "width=200,height=100");
     myWindow.document.write("Votre score est " + score);
 }
